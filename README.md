@@ -23,10 +23,11 @@
 - laravelの準備
 
     ```bash
+    $ composer install
     $ touch .env
     $ cat .env.example >> .env
     # envファイルは個人に合わせ修正する
-    $ composer autoload
+    $ composer dumpautoload
     $ php artisan key:generate
     $ php artisan migrate
     ```
