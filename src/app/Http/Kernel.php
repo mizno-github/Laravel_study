@@ -63,5 +63,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        // middlewareの追加。routeMiddlewareは指定した時にしか発動しない
+        'dumpRequest' => \App\Http\Middleware\DumpRequest::class,
     ];
 }
