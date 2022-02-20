@@ -19,20 +19,15 @@
         @if(!empty($todos))
         @foreach($todos as $todo)
         <tr>
-            <!-- $マーク -->
-            <!-- "->"でattributeにアクセスできる -->
             <td>{{ $todo->title }}</td>
             <td>{{ $todo->content }}</td>
             <td>{{ $todo->created_at }}</td>
             <td>{{ $todo->updated_at }}</td>
             <td><a href="/todo/{{ $todo->id }}">更新</a></td>
             <td>
-                <!-- methodはPOSTかGETのみ -->
                 <form method="POST" action="/todo/{{ $todo->id }}">
                     @csrf()
-                    <!-- csrfトークン -->
                     @method('DELETE')
-                    <!-- deleteメソッドの場合これが必要 -->
                     <input type="submit" value="削除">
                 </form>
             </td>
