@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// admin_userというテキストをdumpRequestに渡している
+// dumpRequest:userにするとdumpRequestのif文に入らない
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('dumpRequest:admin_user');
